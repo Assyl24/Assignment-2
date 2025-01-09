@@ -1,0 +1,24 @@
+public class Main {
+    public static void main(String[] args) {
+        Institution institution = new Institution("Greenwood High", "123 Main St");
+
+        Student student1 = new Student(1, "Alice", 16, "10th Grade");
+        Student student2 = new Student(2, "Bob", 17, "11th Grade");
+
+        Teacher teacher1 = new Teacher(1, "Mr. Smith", 40, "Math");
+        Teacher teacher2 = new Teacher(2, "Ms. Johnson", 35, "English");
+
+        institution.addStudent(student1);
+        institution.addStudent(student2);
+
+        institution.addTeacher(teacher1);
+        institution.addTeacher(teacher2);
+
+        System.out.println("Institution Info: " + institution);
+        System.out.println("Students: " + institution.getStudents());
+        System.out.println("Teachers: " + institution.getTeachers());
+
+        Student foundStudent = institution.findStudentByName("Alice");
+        System.out.println("Found Student: " + foundStudent);
+    }
+}
