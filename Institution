@@ -1,0 +1,46 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Institution {
+    private String name;
+    private String address;
+    private List<Student> students;
+    private List<Teacher> teachers;
+
+    public Institution(String name, String address) {
+        this.name = name;
+        this.address = address;
+        this.students = new ArrayList<>();
+        this.teachers = new ArrayList<>();
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public void addTeacher(Teacher teacher) {
+        teachers.add(teacher);
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public List<Teacher> getTeachers() {
+        return teachers;
+    }
+
+    public Student findStudentByName(String name) {
+        for (Student student : students) {
+            if (student.getName().equals(name)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Institution[Name=" + name + ", Address=" + address +"]";
+    }
+}
